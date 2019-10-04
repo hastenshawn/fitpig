@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block content %}<br>
+<form action = "/result" method = "POST">
+    <p>Search <input type = "text" name = "UPC" /></p>
+    <p><input type = "submit" value = "submit" /></p>
+ </form>
+<h3>{{ result }}</h3>
+<h3>Nutrients</h3>
+<ul>
+{% for item in options %}
+    <li>{{item['name']}} = {{item['value']}}</li>
+{% endfor %}
+</ul>
+<h3>Ingredients</h3>
+<ul>
+{% for item in ingredients %}
+    <li>{{item}}</li>
+{% endfor %}
+</ul>
+
+<p>Use this area to provide additional information.</p>
+
+{% endblock %}
